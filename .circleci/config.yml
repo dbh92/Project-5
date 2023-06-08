@@ -75,7 +75,13 @@ jobs:
         - aws-eks/install-aws-iam-authenticator:
             release-tag: ''
         - run:
-            name:
+            name: Install AWSCLI
+            command: |
+              curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+              unzip awscliv2.zip
+              sudo ./aws/install
+        - run:
+            name: install eks
             command: |
               if which eksctl > /dev/null; then
               echo "eksctl is already installed"
