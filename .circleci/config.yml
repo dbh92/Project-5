@@ -38,7 +38,7 @@ jobs:
             . venv/bin/activate
             make lint
             RESULT=$?
-            if [ ${RESULT} -eq 0 ]
+            if [ ${RESULT -eq 0 ]
             then
               echo "linting success"
             else
@@ -62,11 +62,11 @@ jobs:
           name: Upload the container to remote repo
           command: |
             #login to docker        
-            docker login --username $DOCKER_USERNAME --password $DOCKER_ACCESS_TOKEN
+            docker login --username huandb --password huan137@#
             #tag local image with unique circleci ID in prep for pushing to remote repo
-            docker tag project5 $DOCKER_USERNAME/project5:latest
+            docker tag project5 huandb/project5:latest
             #push the image to docker repo
-            docker push $DOCKER_USERNAME/project5:latest
+            docker push huandb/project5:latest
     
     create-eks-cluster:
       executor: aws-eks/python3
