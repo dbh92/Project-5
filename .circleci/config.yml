@@ -62,7 +62,7 @@ jobs:
           name: Upload the container to remote repo
           command: |
             #login to docker        
-            docker login --username huandb --password huan137@#
+            docker login --username huandb --password dckr_pat_yDFQ1WEYNdgjEnNDSRi0INxC_TQ
             #tag local image with unique circleci ID in prep for pushing to remote repo
             docker tag project5 huandb/project5:latest
             #push the image to docker repo
